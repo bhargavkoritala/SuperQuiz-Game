@@ -1,17 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <component :is="which"></component>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Answer from './components/Answer';
+import Question from './components/Question'
 export default {
   name: 'App',
+  data(){
+    return{
+      which : 'app-Question'
+    }
+  },
   components: {
-    HelloWorld
+    appQuestion : Question,
+    appAnswer : Answer
   }
 }
 </script>
